@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
+=======
+>>>>>>> 39e6a20 (Initial commit)
 import './Home.css';
 import bg from './images/bg.image.jpg';
 import logo from './images/logo.svg';
@@ -29,6 +32,7 @@ import singabig from './images/singabig.webp';
 import singacitybig from './images/singacitybig.webp';
 
 function Home() {
+<<<<<<< HEAD
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const sliderImages = [
@@ -40,6 +44,17 @@ function Home() {
 
   const [currentImage, setCurrentImage] = useState(0);
 
+=======
+  const sliderImages = [
+    { src: japanbig, alt: 'japan' },
+    { src: thaibig, alt: 'thaibig' },
+    { src: singabig, alt: 'singabig' },
+    { src: singacitybig, alt: 'singacity' },
+  ];
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+>>>>>>> 39e6a20 (Initial commit)
   const moveImageSlide = (direction) => {
     setCurrentImage((prev) => (prev + direction + sliderImages.length) % sliderImages.length);
   };
@@ -64,6 +79,7 @@ function Home() {
           <div className="nav-buttons">
             <button className="MyBookings"><strong>My Bookings</strong></button>
             <button className="Login" aria-label="Login"><strong>Login</strong></button>
+<<<<<<< HEAD
             <div className="hamburger-container">
               <button 
                 className="hamburger-button" 
@@ -83,6 +99,8 @@ function Home() {
                 </div>
               )}
             </div>
+=======
+>>>>>>> 39e6a20 (Initial commit)
           </div>
         </div>
 

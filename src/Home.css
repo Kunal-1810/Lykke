@@ -11,8 +11,13 @@
 
 .Logo {
   border-radius: 30px;
+<<<<<<< HEAD
   width: 140px;
   height: 55px;
+=======
+  width: 160px;
+  height: 85px;
+>>>>>>> 39e6a20 (Initial commit)
   padding: 15px;
 }
 
@@ -41,6 +46,7 @@
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 .hamburger-container {
   position: relative;
   display: inline-block;
@@ -208,6 +214,121 @@ h3{
   padding: 10px;
 }
 
+=======
+
+.search-box {
+  position: absolute;
+  top: 170px;            
+  left: 50%;
+  transform: translateX(-50%);   
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 550px;
+  background: #fff;
+  border-radius: 50px;
+  padding: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 14px;
+  font-size: 18px;
+  color: #333;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-button {
+  border: none;
+  background: #cc0066;
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.search-button:hover {
+  background: #a3004f;
+}
+.destinations{
+  position: absolute;
+  top: 280px;
+  display: flex;            
+  left: 50%;
+  transform: translateX(-50%);   
+  align-items: center;
+  color:white;
+
+}
+.destinations button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  margin-left: 10px;
+  width: fit-content;
+  color: black;
+  background: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  font-family: Manrope, sans-serif;
+  cursor: pointer;
+
+}
+.countrylogo{
+  border-radius: 50%;
+  width: 26px;
+  height: 22px;
+  object-fit: cover;
+  padding:4px;
+}
+.des.button{
+  display:inline-block;
+}
+h5{
+    color:white;
+    position: absolute;
+  top: 210px;            
+  left: 50%;
+  transform: translateX(-50%);
+    font-size: 15px;
+}
+h2{
+  color: white;
+    position: absolute;
+  top: 330px;            
+  left: 50%;
+  transform: translateX(-50%);
+    font-size: 55px;
+    text-align: center;
+}
+h3{
+  font-size: 35px;
+  margin-left: 20px;
+}
+.cards-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+>>>>>>> 39e6a20 (Initial commit)
 .card {
   width: 260px;
   background: white;
@@ -298,12 +419,21 @@ h3{
 }
 
 .card1 {
+<<<<<<< HEAD
   width: 300px;
   height: 170px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
   padding: 20px;
+=======
+  width: 320px;
+  height: 200px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  padding: 10px;
+>>>>>>> 39e6a20 (Initial commit)
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -312,7 +442,10 @@ h3{
   position: relative;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 39e6a20 (Initial commit)
 .card2{
   width: 260px;
   height: 300px;
@@ -563,4 +696,8 @@ h3{
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 39e6a20 (Initial commit)
