@@ -4,12 +4,10 @@ import Contact from './Contact';
 import Home from './Home';
 import Info from './Info' ;
 import Error from './Error';
-import Menu from './Menu';
 import { Routes, Route } from 'react-router-dom';
 const App = () => {
     return (
         <div className="tc">
-            <Menu />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />

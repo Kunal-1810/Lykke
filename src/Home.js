@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import bg from './images/bg.image.jpg';
 import logo from './images/logo.svg';
@@ -28,6 +29,8 @@ import singabig from './images/singabig.webp';
 import singacitybig from './images/singacitybig.webp';
 
 function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const sliderImages = [
     { src: japanbig, alt: 'japan' },
     { src: thaibig, alt: 'thaibig' },
@@ -61,6 +64,25 @@ function Home() {
           <div className="nav-buttons">
             <button className="MyBookings"><strong>My Bookings</strong></button>
             <button className="Login" aria-label="Login"><strong>Login</strong></button>
+            <div className="hamburger-container">
+              <button 
+                className="hamburger-button" 
+                onClick={() => setIsMenuOpen((prev) => !prev)} 
+                aria-label="Menu"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cc0066" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </button>
+              {isMenuOpen && (
+                <div className="hamburger-dropdown">
+                  <Link to="/about" className="dropdown-item" onClick={() => setIsMenuOpen(false)}>About Us</Link>
+                  <Link to="/contact" className="dropdown-item" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
