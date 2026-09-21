@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Home.css';
+import { useNavigate } from "react-router-dom";
 import bg from './images/bg.image.jpg';
 import logo from './images/logo.svg';
 import india from './images/in.svg';
@@ -34,7 +35,7 @@ function Home() {
     { src: singabig, alt: 'singabig' },
     { src: singacitybig, alt: 'singacity' },
   ];
-
+  const navigate = useNavigate();
   const [currentImage, setCurrentImage] = useState(0);
 
   const moveImageSlide = (direction) => {
@@ -57,10 +58,12 @@ function Home() {
         }}
       >
         <div className="top-bar">
-          <img className="Logo" href="#" src={logo} alt="Logo"/>
+          <img className="Logo" href="#"   src={logo} alt="Logo"/>
           <div className="nav-buttons">
-            <button className="MyBookings"><strong>My Bookings</strong></button>
-            <button className="Login" aria-label="Login"><strong>Login</strong></button>
+            <button className="MyBookings" onClick={() => navigate("/bookings")}> <strong> My Bookings</strong>
+            </button>
+            <button className="Login" onClick={() => navigate("/login")}> <strong> Login</strong></button>
+            <button className="About Us" onClick={() => navigate("/About")}> <strong> About </strong></button>
           </div>
         </div>
 
@@ -267,10 +270,10 @@ function Home() {
       }}
     >
       <h3 className="card-title1">Philippines</h3>
-      <p className="card-desc1">
+      <p2 className="card-desc1">
         Packages starting from <br />
         <strong>₹62,999*</strong>
-      </p>
+      </p2>
     </div>
 
     <div
@@ -288,10 +291,10 @@ function Home() {
       }}
     >
       <h3 className="card-title1">Greece</h3>
-      <p className="card-desc1">
+      <p2 className="card-desc1">
         Packages starting from <br />
         <strong>₹38,899*</strong>
-      </p>
+      </p2>
     </div>
 
     <div
@@ -309,10 +312,10 @@ function Home() {
       }}
     >
       <h3 className="card-title1">Egypt</h3>
-      <p className="card-desc1">
-        Packages starting from <br />
+      <p2 className="card-desc1">
+        Packages starting from <br/>
         <strong>₹34,799*</strong>
-      </p>
+      </p2>
     </div>
 
     <div
@@ -330,10 +333,10 @@ function Home() {
       }}
     >
       <h3 className="card-title1">Bali-Indonesia</h3>
-      <p className="card-desc1">
+      <p2 className="card-desc1">
         Packages starting from <br />
         <strong>₹50,000*</strong>
-      </p>
+      </p2>
     </div>
   </div>
 </div>

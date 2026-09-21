@@ -1,14 +1,21 @@
-import React from 'react';
-import { NavLink }  from 'react-router-dom';
-const Menu = () =>
-   {
-return (
-<div>
-<NavLink exact activeClassName="active-css" to='/'>HOME  </NavLink>
-<NavLink activeClassName="active-css" to='/about'> About us  </NavLink>
-<NavLink activeClassName="active-css" to='/contact'> Login </NavLink>
-<NavLink className={({ isActive }) => isActive ? "active-css" : ""} to='/info'> Bookings </NavLink>
-</div>
-);
+import React from "react";
+import { NavLink } from "react-router-dom";
+import './Menu.css';
+
+const linkClass = (base) => ({ isActive }) =>
+  isActive ? `${base} active-css` : base;
+
+const Menu = () => {
+  return (
+    <div className="top-bar1">
+        <div className="nav-buttons">
+          <NavLink end to="/" className={linkClass("nav-link")}>  </NavLink>
+          <NavLink to="/bookings" className={linkClass("nav-link")}>  </NavLink>
+          <NavLink to="/login" className={linkClass("nav-link")}>  </NavLink>
+          <NavLink to="/about" className={linkClass("nav-link")}>  </NavLink>
+        </div>
+    </div>
+  );
 };
+
 export default Menu;
