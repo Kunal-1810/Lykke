@@ -44,7 +44,7 @@ function About() {
   <div className="about-section">
   <div className="about-intro">
     <span className="about-tag">About Us</span>
-    <h2 className="about-heading">Holidays made for Global Indians</h2>
+    <h2 className="about-heading"></h2>
     <p className="about-lead">
       Travel Lykke is a travel company built around one idea: a holiday should
       feel easy from the first search to the flight back home. We plan trips for
@@ -71,25 +71,25 @@ function About() {
   <div className="about-two-col">
     <div className="about-block">
       <h3>Our story</h3>
-      <p>
+      <h7>
         Planning an international trip can mean juggling visas, hotels, flights
         and sightseeing across a dozen tabs. We started Travel Lykke to bring all
         of that into one place, with itineraries designed by people who have
         actually travelled these routes.
-      </p>
-      <p>
+      </h7>
+      <h7>
         From Bhutan's quiet valleys to the beaches of Thailand and the history of
         Turkey, every package is built to be simple to book and memorable to live.
-      </p>
+      </h7>
     </div>
 
     <div className="about-block about-mission">
       <h3>Our mission</h3>
-      <p>
+      <h8>
         To make world travel stress-free for every Indian traveller, whether
         it's a first trip abroad, a family holiday or a honeymoon, by combining
         expert planning, fair pricing and real human support.
-      </p>
+      </h8>
     </div>
   </div>
 
