@@ -40,7 +40,58 @@ function Bookings() {
       </div>
       </div>
 <div>
-    <p>No current bookings </p>
+  <div className="auth-wrap">
+  <div className="auth-card">
+    <h2 className="auth-title">Welcome back</h2>
+    <p className="auth-subtitle">Log in to manage your bookings</p>
+
+    <form onSubmit={handleLogin} noValidate>
+      <label className="auth-label" htmlFor="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        className="auth-input"
+        placeholder="you@example.com"
+        value={form.email}
+        onChange={handleChange}
+        autoComplete="email"
+      />
+
+      <label className="auth-label" htmlFor="password">Password</label>
+      <div className="auth-password-wrap">
+        <input
+          id="password"
+          name="password"
+          type={showPassword ? 'text' : 'password'}
+          className="auth-input"
+          placeholder="Enter your password"
+          value={form.password}
+          onChange={handleChange}
+          autoComplete="current-password"
+        />
+        <button
+          type="button"
+          className="auth-toggle"
+          onClick={() => setShowPassword(!showPassword)}
+        >
+          {showPassword ? 'Hide' : 'Show'}
+        </button>
+      </div>
+
+      {error && <p className="auth-error" role="alert">{error}</p>}
+
+      <button type="submit" className="auth-submit">Login</button>
+    </form>
+
+    <p className="auth-footer">
+      New here?{' '}
+      <button type="button" className="auth-link" onClick={() => navigate('/register')}>
+        Create an account
+      </button>
+    </p>
+  </div>
+</div>
 </div>
 
 
