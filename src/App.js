@@ -6,6 +6,7 @@ import Bookings from './Bookings';
 import Error from './Error';
 import Menu from './Menu';
 import { Routes, Route } from 'react-router-dom';
+
 const App = () => {
     return (
         <div className="tc">
@@ -20,4 +21,5 @@ const App = () => {
         </div>
     );
 };
+
 export default App;
