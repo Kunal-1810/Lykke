@@ -1,29 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Home.css';
 import bg from './images/bg.image.jpg';
 import logo from './images/logo.svg';
 
-
-const [form, setForm] = useState({ email: '', password: '' });
-const [showPassword, setShowPassword] = useState(false);
-const [error, setError] = useState('');
-
-const handleChange = (e) => {
-  setForm({ ...form, [e.target.name]: e.target.value });
-  setError('');
-};
-
-const handleLogin = (e) => {
-  e.preventDefault();
-  if (!form.email || !form.password) {
-    setError('Please enter your email and password.');
-    return;
-  }
-  // TODO: call your login API here
-  console.log('Login:', form.email);
-};
-
-function LoginPage() {
+function Login() {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
@@ -45,7 +26,7 @@ function LoginPage() {
 
     setLoading(true);
     try {
-
+      // TODO: call your login API here
       navigate('/');
     } catch (err) {
       setError(err.message || 'Something went wrong. Please try again.');
@@ -119,4 +100,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default Login;
