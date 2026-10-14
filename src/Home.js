@@ -58,7 +58,9 @@ function Home() {
         }}
       >
         <div className="top-bar">
-          <img className="Logo" href="#"   src={logo} alt="Logo"/>
+          <button className="logo-btn" onClick={() => navigate("/")} aria-label="Go to home">
+  <img className="Logo" src={logo} alt="Travel Lykke logo" />
+</button>
           <div className="nav-buttons">
             <button className="MyBookings" onClick={() => navigate("/bookings")}> <strong> My Bookings</strong>
             </button>

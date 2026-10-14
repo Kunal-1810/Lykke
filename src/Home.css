@@ -12,7 +12,14 @@
   z-index: 100;
   justify-content: space-between;
 }
-
+.logo-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
 p{
   font-size:50px;
   text-align:center;
