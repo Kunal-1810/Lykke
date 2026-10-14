@@ -45,7 +45,6 @@ function Login() {
       </button>
 
       <div className="auth-card">
-        <h2 className="auth-title">Welcome back</h2>
         <p className="auth-subtitle">Log in to manage your bookings</p>
 
         <form onSubmit={handleSubmit} noValidate>
