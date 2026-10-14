@@ -45,6 +45,11 @@ function Home() {
   console.log('Clicked package:', packageId);
 };
 
+<head>
+  <<meta name="google-site-verification" content="andlhhsPo5yCHDu7FX3DI-ga67vDTFnQVQ6L0hMoIxU" /> />
+  <meta charset="utf-8" />
+</head>
+
   return (
     <div>
       <div
