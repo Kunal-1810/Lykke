@@ -1,18 +1,52 @@
+* { box-sizing: border-box; }
 
-.nav-link{
-    text-decoration: none;
-    color: black;
-    height:1px;
-    
-    z-index: 10;
+.top-bar1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  position: relative;
+}
 
+.nav-buttons {
+  display: flex;
+  gap: 12px;
 }
-.nav-button{
-    height:1px;
-    z-index: 10;
+
+.nav-link {
+  padding: 10px 16px;
+  text-decoration: none;
+  min-height: 44px;            /* comfortable touch target */
+  display: inline-flex;
+  align-items: center;
 }
-.top-bar1{
-    height: 0px;
-    
-    z-index: 10;
+
+.menu-toggle {
+  display: none;               /* hidden on desktop */
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Phones and small tablets */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+
+  .nav-buttons {
+    display: none;             /* hidden until opened */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;          /* match your theme */
+    padding: 8px 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+  }
+
+  .nav-buttons.open { display: flex; }
 }
