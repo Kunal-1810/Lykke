@@ -66,12 +66,6 @@ function Home() {
           <button className="logo-btn" onClick={() => navigate("/")} aria-label="Go to home">
   <img className="Logo" src={logo} alt="Travel Lykke logo" />
 </button>
-          <div className="nav-buttons">
-            <button className="MyBookings" onClick={() => navigate("/bookings")}> <strong> My Bookings</strong>
-            </button>
-            <button className="Login" onClick={() => navigate("/login")}> <strong> Login</strong></button>
-            <button className="About Us" onClick={() => navigate("/About")}> <strong> About </strong></button>
-          </div>
         </div>
 
         <div className="search-box">

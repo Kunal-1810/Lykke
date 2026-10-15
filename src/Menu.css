@@ -1,52 +1,87 @@
 * { box-sizing: border-box; }
 
 .top-bar1 {
+  position: absolute;          /* sits on top of the hero image */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  position: relative;
+  justify-content: space-between;   /* logo left, buttons right */
+  padding: 16px 40px;
 }
+
+.logo-link { display: flex; align-items: center; }
+.logo-img { height: 48px; width: auto; }
 
 .nav-buttons {
   display: flex;
-  gap: 12px;
+  gap: 16px;
 }
 
-.nav-link {
-  padding: 10px 16px;
+/* same look as the hero buttons */
+.nav-pill {
+  background: #fff;
+  color: #d6006f;               /* match your pink */
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 8px 28px;
+  border-radius: 999px;
   text-decoration: none;
-  min-height: 44px;            /* comfortable touch target */
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 
-.menu-toggle {
-  display: none;               /* hidden on desktop */
-  font-size: 1.6rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  min-width: 44px;
-  min-height: 44px;
+.nav-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
+
+.nav-pill.active-css {
+  background: #d6006f;
+  color: #fff;
+}
+
+.menu-toggle { display: none; }
 
 /* Phones and small tablets */
 @media (max-width: 768px) {
-  .menu-toggle { display: block; }
+  .top-bar1 { padding: 12px 16px; }
+  .logo-img { height: 40px; }
+  .nav-pill { font-size: 1.1rem; padding: 8px 20px; }
+
+  .menu-toggle {
+    display: block;
+    background: #fff;
+    color: #d6006f;
+    border: none;
+    border-radius: 999px;
+    font-size: 1.4rem;
+    min-width: 44px;
+    min-height: 44px;
+    cursor: pointer;
+  }
 
   .nav-buttons {
-    display: none;             /* hidden until opened */
+    display: none;
     flex-direction: column;
+    align-items: stretch;
     position: absolute;
     top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;          /* match your theme */
-    padding: 8px 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    z-index: 100;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
   .nav-buttons.open { display: flex; }
+
+  .nav-pill {
+    justify-content: center;
+    border: 2px solid #d6006f;   /* keeps pills visible on the white dropdown */
+  }
 }

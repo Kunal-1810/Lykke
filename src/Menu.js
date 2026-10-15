@@ -1,16 +1,21 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import logo from "./logo.png"; // change to your logo's real path/filename
 import "./Menu.css";
-
-const linkClass = (base) => ({ isActive }) =>
-  isActive ? `${base} active-css` : base;
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
   const closeMenu = () => setOpen(false);
 
+  const linkClass = ({ isActive }) =>
+    isActive ? "nav-pill active-css" : "nav-pill";
+
   return (
-    <div className="top-bar1">
+    <header className="top-bar1">
+      <Link to="/" className="logo-link" onClick={closeMenu}>
+        <img src={logo} alt="Travel Lykke - Home" className="logo-img" />
+      </Link>
+
       <button
         className="menu-toggle"
         onClick={() => setOpen(!open)}
@@ -20,21 +25,18 @@ const Menu = () => {
         {open ? "✕" : "☰"}
       </button>
 
-      <div className={`nav-buttons ${open ? "open" : ""}`}>
-        <NavLink end to="/" className={linkClass("nav-link")} onClick={closeMenu}>
-          Home
-        </NavLink>
-        <NavLink to="/bookings" className={linkClass("nav-link")} onClick={closeMenu}>
+      <nav className={`nav-buttons ${open ? "open" : ""}`}>
+        <NavLink to="/bookings" className={linkClass} onClick={closeMenu}>
           My Bookings
         </NavLink>
-        <NavLink to="/login" className={linkClass("nav-link")} onClick={closeMenu}>
+        <NavLink to="/login" className={linkClass} onClick={closeMenu}>
           Login
         </NavLink>
-        <NavLink to="/about" className={linkClass("nav-link")} onClick={closeMenu}>
+        <NavLink to="/about" className={linkClass} onClick={closeMenu}>
           About
         </NavLink>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 
