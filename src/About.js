@@ -16,6 +16,7 @@ function About() {
 
   return (
     <div>
+      
       <div
         className="hero"
         style={{
@@ -26,15 +27,6 @@ function About() {
           position: 'relative',
         }}
       >
-        <div className="top-bar">
-          <img className="Logo" href="#" src={logo} alt="Logo"/>
-          <div className="nav-buttons">
-            <button className="MyBookings" onClick={() => navigate("/bookings")}> <strong> My Bookings</strong>
-            </button>
-            <button className="Login" onClick={() => navigate("/login")}> <strong> Login</strong></button>
-            <button className="About Us" onClick={() => navigate("/About")}> <strong> About </strong></button>
-          </div>
-        </div>
 
         <div className="pagename">
         <h2> HOLIDAYS FOR GLOBAL INDIANS </h2>

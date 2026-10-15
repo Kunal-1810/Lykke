@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Home.css';
-import { useNavigate } from "react-router-dom";
-import bg from './images/bg.image.jpg';
+import { useNavigate } from 'react-router-dom';
 import logo from './images/logo.svg';
+import bg from './images/bg.image.jpg';
 import india from './images/in.svg';
 import japan from './images/jp.svg';
 import egypt from './images/eg.svg';
@@ -35,8 +35,9 @@ function Home() {
     { src: singabig, alt: 'singabig' },
     { src: singacitybig, alt: 'singacity' },
   ];
-  const navigate = useNavigate();
+
   const [currentImage, setCurrentImage] = useState(0);
+    const navigate = useNavigate();
 
   const moveImageSlide = (direction) => {
     setCurrentImage((prev) => (prev + direction + sliderImages.length) % sliderImages.length);
@@ -62,11 +63,6 @@ function Home() {
           position: 'relative',
         }}
       >
-        <div className="top-bar">
-          <button className="logo-btn" onClick={() => navigate("/")} aria-label="Go to home">
-  <img className="Logo" src={logo} alt="Travel Lykke logo" />
-</button>
-        </div>
 
         <div className="search-box">
           <input

@@ -26,7 +26,6 @@ function Login() {
 
     setLoading(true);
     try {
-      // TODO: call your login API here
       navigate('/');
     } catch (err) {
       setError(err.message || 'Something went wrong. Please try again.');
@@ -40,9 +39,6 @@ function Login() {
       className="auth-page"
       style={{ backgroundImage: `linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url(${bg})` }}
     >
-      <button className="auth-logo-btn" onClick={() => navigate('/')} aria-label="Go to home">
-        <img src={logo} alt="Logo" />
-      </button>
 
       <div className="auth-card">
         <p className="auth-subtitle">Log in to manage your bookings</p>

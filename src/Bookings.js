@@ -7,11 +7,6 @@ import logo1 from './images/logo1.svg';
 
 function Bookings() {
   const navigate = useNavigate();
-  const [currentImage, setCurrentImage] = useState(0);
-
-  const handleCardClick = (packageId) => {
-    console.log('Clicked package:', packageId);
-  };
 
   return (
     <div>
@@ -25,11 +20,7 @@ function Bookings() {
           position: 'relative',
         }}
       >
-        <div className="top-bar">
-          <button className="logo-btn" onClick={() => navigate("/")} aria-label="Go to home">
-            <img className="Logo" src={logo} alt="Travel Lykke logo" />
-          </button>
-        </div>
+
 
         <div className="pagename">
           <h2> HOLIDAYS FOR GLOBAL INDIANS </h2>
