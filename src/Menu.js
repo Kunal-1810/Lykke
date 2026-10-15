@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "./logo.png"; // change to your logo's real path/filename
+import logo from "./logo.svg";
 import "./Menu.css";
 
 const Menu = () => {
