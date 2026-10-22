@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import './Home.css';
 import bg from './images/bg.image.jpg';
-import logo from './images/logo.svg';
+import { useAuth } from './AuthContext';
 
 function Login() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { user, login } = useAuth();
+  const from = (location.state && location.state.from) || '/';
+  const notice = location.state && location.state.notice;
+
   const [form, setForm] = useState({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  // Already logged in (or just logged in): go back to where the visitor was heading.
+  if (user) return <Navigate to={from} replace />;
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -25,13 +33,12 @@ function Login() {
     }
 
     setLoading(true);
-    try {
-      navigate('/');
-    } catch (err) {
-      setError(err.message || 'Something went wrong. Please try again.');
-    } finally {
+    const result = await login(form);
+    if (!result.ok) {
+      setError(result.error);
       setLoading(false);
     }
+    // On success `user` is set and the <Navigate> above takes over.
   };
 
   return (
@@ -39,9 +46,10 @@ function Login() {
       className="auth-page"
       style={{ backgroundImage: `linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url(${bg})` }}
     >
-
       <div className="auth-card">
-        <p className="auth-subtitle">Log in to manage your bookings</p>
+        <p className="auth-subtitle">
+          {notice || 'Log in to manage your bookings'}
+        </p>
 
         <form onSubmit={handleSubmit} noValidate>
           <label className="auth-label" htmlFor="email">Email</label>
@@ -86,7 +94,11 @@ function Login() {
 
         <p className="auth-footer">
           New here?{' '}
-          <button type="button" className="auth-link" onClick={() => navigate('/register')}>
+          <button
+            type="button"
+            className="auth-link"
+            onClick={() => navigate('/register', { state: location.state })}
+          >
             Create an account
           </button>
         </p>

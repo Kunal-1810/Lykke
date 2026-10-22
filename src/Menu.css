@@ -17,7 +17,8 @@
 
 .nav-buttons {
   display: flex;
-  gap: 16px;
+  align-items: center;
+  gap: 14px;
 }
 
 /* same look as the hero buttons */
@@ -25,8 +26,8 @@
   background: #fff;
   color: #d6006f;               /* match your pink */
   font-weight: 700;
-  font-size: 1.5rem;
-  padding: 8px 28px;
+  font-size: 1.3rem;
+  padding: 8px 24px;
   border-radius: 999px;
   text-decoration: none;
   min-height: 44px;
@@ -45,10 +46,28 @@
   color: #fff;
 }
 
+.nav-btn {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.nav-greeting {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+  .nav-greeting { display: none; }
+}
+
 .menu-toggle { display: none; }
 
 /* Phones and small tablets */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .top-bar1 { padding: 12px 16px; }
   .logo-img { height: 40px; }
   .nav-pill { font-size: 1.1rem; padding: 8px 20px; }
@@ -80,8 +99,18 @@
 
   .nav-buttons.open { display: flex; }
 
+  .nav-greeting {
+    display: block;
+    color: #d6006f;
+    text-align: center;
+    text-shadow: none;
+    padding-bottom: 4px;
+  }
+
   .nav-pill {
     justify-content: center;
     border: 2px solid #d6006f;   /* keeps pills visible on the white dropdown */
+    font-family: inherit;
+    cursor: pointer;
   }
 }
