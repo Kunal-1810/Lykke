@@ -883,3 +883,29 @@ h3{
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 768px) {
+  .tc, .hero {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* If the page is a row/grid on desktop, stack it on mobile */
+  .tc { display: block; }
+
+  /* Search bar should fit inside the hero */
+  .hero input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Destination chips: wrap instead of overflowing */
+  .hero .chips,
+  .hero .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+}
