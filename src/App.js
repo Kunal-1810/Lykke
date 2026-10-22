@@ -12,6 +12,7 @@ import RequireAuth from './RequireAuth';
 import ScrollToTop from './ScrollToTop';
 import Error from './Error';
 import Menu from './Menu';
+import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
 
